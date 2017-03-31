@@ -37,4 +37,11 @@ public class StudentDaoImpl extends AbstractStudentDao {
         students.add(student);
     }
 
+    @Override
+    public Student addStudent(Student student) {
+        if(students.add(student)) {
+            return student;
+        }
+        return null;
+    }
 }

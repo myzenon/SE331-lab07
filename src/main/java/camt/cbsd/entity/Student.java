@@ -1,136 +1,141 @@
 package camt.cbsd.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 /**
  * Created by Dto on 3/11/2017.
  */
+@JsonIgnoreProperties(value="true")
 public class Student {
-    long id;
-    String studentId;
-    String name;
-    String surname;
-    double gpa;
-    String image;
-    boolean feature;
-    int penAmount;
-    String description;
+	long id;
+	String studentId;
+	String name;
+	String surname;
+	double gpa;
+	String image;
+	boolean feature;
+	int penAmount;
+	String description;
 
-    public Student(long id, String studentId, String name, String surname, double gpa, String image, boolean feature, int penAmount, String description) {
-        this.id = id;
-        this.studentId = studentId;
-        this.name = name;
-        this.surname = surname;
-        this.gpa = gpa;
-        this.image = image;
-        this.feature = feature;
-        this.penAmount = penAmount;
-        this.description = description;
-    }
+	public Student() {}
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+	public Student(long id, String studentId, String name, String surname, double gpa, String image, boolean feature, int penAmount, String description) {
+		this.id = id;
+		this.studentId = studentId;
+		this.name = name;
+		this.surname = surname;
+		this.gpa = gpa;
+		this.image = image;
+		this.feature = feature;
+		this.penAmount = penAmount;
+		this.description = description;
+	}
 
-        Student student = (Student) o;
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
 
-        if (id != student.id) return false;
-        if (Double.compare(student.gpa, gpa) != 0) return false;
-        if (feature != student.feature) return false;
-        if (penAmount != student.penAmount) return false;
-        if (studentId != null ? !studentId.equals(student.studentId) : student.studentId != null) return false;
-        if (name != null ? !name.equals(student.name) : student.name != null) return false;
-        if (surname != null ? !surname.equals(student.surname) : student.surname != null) return false;
-        if (image != null ? !image.equals(student.image) : student.image != null) return false;
-        return description != null ? description.equals(student.description) : student.description == null;
-    }
+		Student student = (Student) o;
 
-    @Override
-    public int hashCode() {
-        int result;
-        long temp;
-        result = (int) (id ^ (id >>> 32));
-        result = 31 * result + (studentId != null ? studentId.hashCode() : 0);
-        result = 31 * result + (name != null ? name.hashCode() : 0);
-        result = 31 * result + (surname != null ? surname.hashCode() : 0);
-        temp = Double.doubleToLongBits(gpa);
-        result = 31 * result + (int) (temp ^ (temp >>> 32));
-        result = 31 * result + (image != null ? image.hashCode() : 0);
-        result = 31 * result + (feature ? 1 : 0);
-        result = 31 * result + penAmount;
-        result = 31 * result + (description != null ? description.hashCode() : 0);
-        return result;
-    }
+		if (id != student.id) return false;
+		if (Double.compare(student.gpa, gpa) != 0) return false;
+		if (feature != student.feature) return false;
+		if (penAmount != student.penAmount) return false;
+		if (studentId != null ? !studentId.equals(student.studentId) : student.studentId != null) return false;
+		if (name != null ? !name.equals(student.name) : student.name != null) return false;
+		if (surname != null ? !surname.equals(student.surname) : student.surname != null) return false;
+		if (image != null ? !image.equals(student.image) : student.image != null) return false;
+		return description != null ? description.equals(student.description) : student.description == null;
+	}
 
-    public long getId() {
-        return id;
-    }
+	@Override
+	public int hashCode() {
+		int result;
+		long temp;
+		result = (int) (id ^ (id >>> 32));
+		result = 31 * result + (studentId != null ? studentId.hashCode() : 0);
+		result = 31 * result + (name != null ? name.hashCode() : 0);
+		result = 31 * result + (surname != null ? surname.hashCode() : 0);
+		temp = Double.doubleToLongBits(gpa);
+		result = 31 * result + (int) (temp ^ (temp >>> 32));
+		result = 31 * result + (image != null ? image.hashCode() : 0);
+		result = 31 * result + (feature ? 1 : 0);
+		result = 31 * result + penAmount;
+		result = 31 * result + (description != null ? description.hashCode() : 0);
+		return result;
+	}
 
-    public double getGpa() {
-        return gpa;
-    }
+	public long getId() {
+		return id;
+	}
 
-    public void setGpa(double gpa) {
-        this.gpa = gpa;
-    }
+	public double getGpa() {
+		return gpa;
+	}
 
-    public String getImage() {
-        return image;
-    }
+	public void setGpa(double gpa) {
+		this.gpa = gpa;
+	}
 
-    public void setImage(String image) {
-        this.image = image;
-    }
+	public String getImage() {
+		return image;
+	}
 
-    public boolean isFeature() {
-        return feature;
-    }
+	public void setImage(String image) {
+		this.image = image;
+	}
 
-    public void setFeature(boolean feature) {
-        this.feature = feature;
-    }
+	public boolean isFeature() {
+		return feature;
+	}
 
-    public int getPenAmount() {
-        return penAmount;
-    }
+	public void setFeature(boolean feature) {
+		this.feature = feature;
+	}
 
-    public void setPenAmount(int penAmount) {
-        this.penAmount = penAmount;
-    }
+	public int getPenAmount() {
+		return penAmount;
+	}
 
-    public String getDescription() {
-        return description;
-    }
+	public void setPenAmount(int penAmount) {
+		this.penAmount = penAmount;
+	}
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
+	public String getDescription() {
+		return description;
+	}
 
-    public void setId(long id) {
+	public void setDescription(String description) {
+		this.description = description;
+	}
 
-        this.id = id;
-    }
+	public void setId(long id) {
 
-    public String getStudentId() {
-        return studentId;
-    }
+		this.id = id;
+	}
 
-    public void setStudentId(String studentId) {
-        this.studentId = studentId;
-    }
+	public String getStudentId() {
+		return studentId;
+	}
 
-    public String getName() {
-        return name;
-    }
+	public void setStudentId(String studentId) {
+		this.studentId = studentId;
+	}
 
-    public void setName(String name) {
-        this.name = name;
-    }
+	public String getName() {
+		return name;
+	}
 
-    public String getSurname() {
-        return surname;
-    }
+	public void setName(String name) {
+		this.name = name;
+	}
 
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
+	public String getSurname() {
+		return surname;
+	}
+
+	public void setSurname(String surname) {
+		this.surname = surname;
+	}
 }

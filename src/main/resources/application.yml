@@ -1,12 +1,13 @@
 server:
   baseUrl: http://localhost:3000/
   imageUrl: images/
+  imageServerDir: C:/lab/lab07/web/images/server pic/
 ---
 spring:
   profiles: local
 server:
-  baseUrl: http://localhost:1000/
-  imageUrl: images/
+  baseUrl: http://localhost:8080/
+  imageUrl: student/images/
 ---
 spring:
   profiles: remote

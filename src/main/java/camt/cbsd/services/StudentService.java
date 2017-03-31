@@ -10,4 +10,5 @@ import java.util.List;
 public interface StudentService {
     List<Student> getStudents();
     Student findById(long id);
+    Student addStudent(Student student);
 }

@@ -17,7 +17,7 @@ export class StudentsDataService {
    return null;
   }
 
-  addStudent(student:Student){
-
+  addStudent(student:Student, imageFile : any){
+    return null;
   }
 }

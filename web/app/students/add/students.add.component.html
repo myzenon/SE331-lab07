@@ -28,7 +28,7 @@
     <div class="form-group">
       <label class="col-sm-2 control-label">File input : </label>
       <div class="col-sm-10">
-        <input type="file" class="btn btn-default" id="exampleInputFile" (change)="onFileChange($event,student)" >
+        <input #fileInput type="file" class="btn btn-default" id="exampleInputFile" (change)="onFileChange($event,student)" >
         <p class="help-block">Leave here for the file preview later.</p>
       </div>
     </div>
